@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 15:24:12 by vinicius          #+#    #+#             */
-/*   Updated: 2021/09/27 20:25:18 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 11:10:54 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,6 @@ t_matrix		transpose(t_matrix a);
 double			mult_lines(int x, int y, t_matrix a, t_matrix b);
 double			determinant(t_matrix a);
 t_matrix		submatrix(t_matrix a, int row, int column);
-float			minor(t_matrix a, int row, int column);
 float			cofactor(t_matrix a, int row, int column);
 t_matrix		invert(t_matrix a);
 

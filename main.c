@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 18:22:41 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/27 20:23:10 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 12:59:12 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	main(int argc, char **argv)
 
 	w = parse(argc, argv);
 	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, w.camera.hsize, w.camera.vsize, "RT");
+	vars.win = mlx_new_window(vars.mlx, w.camera.hsize,
+			w.camera.vsize, "miniRT");
 	img.img = mlx_new_image(vars.mlx, w.camera.hsize, w.camera.vsize);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 			&img.line_length, &img.endian);

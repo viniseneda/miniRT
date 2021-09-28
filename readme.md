@@ -42,15 +42,15 @@ by adding a 'c' after the 'cy', the ray tracer will add a cap to the ends of the
 
 ```cy 0,0,0 0,0,1 (0 5) 2 3 100,255,50```
 
-it is possible to tweak the min and max cylinder height. But it should affect the resulting total height, as it is composed of a transformation of 1 unit height cylinder.
+it is possible to tweak the min and max cylinder height. But it should affect the resulting total height, as it is composed of a transformation of a 1 unit height cylinder.
 
 #### cone: 
 ```co 0,0,0 0,0,1 (0 5) 2 3 100,255,50```
 
-the cone has almost the same properties as the cylinder (with the exception of the caps)
+the cone has almost the same properties as the cylinder (with the exception of the caps).
 But in this case the tweaking of the min and max is highly recomended, as it allows for more interesting shapes.
 
 #### plane: 
-```ct 0,0,0 0,0,1 100,255,50```
+```pl 0,0,0 0,0,1 100,255,50```
 
-position - orientation vector -radius - height - color/material
+position - orientation vector - color/material

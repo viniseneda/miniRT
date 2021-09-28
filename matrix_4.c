@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:18:49 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/24 18:20:24 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 11:10:48 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ t_matrix	submatrix(t_matrix a, int row, int column)
 		column++;
 	}
 	return (a);
-}
-
-float	minor(t_matrix a, int row, int column)
-{
-	return (determinant(submatrix(a, row, column)));
 }
 
 float	cofactor(t_matrix a, int row, int column)

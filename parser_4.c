@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:44:45 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/27 09:53:50 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 12:42:33 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_line_data	parse_res(t_parsing p)
 	parse_char(p, 'R');
 	data.x = parse_double(p);
 	data.y = parse_double(p);
-	if (data.x < 0 || data.y < 0)
+	if (data.x <= 0 || data.y <= 0)
 		error("resolution has to be larger than zero");
 	return (data);
 }
@@ -74,5 +74,6 @@ t_parsing	parse_ambient_li(t_parsing p)
 	p.has_ambient = true;
 	d = parse_al(p);
 	p.w.brute_ambient = d.ratio;
+	p.w.ambient_color = convert_color_value(d.color);
 	return (p);
 }

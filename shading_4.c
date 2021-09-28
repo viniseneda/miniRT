@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:33:18 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/24 18:37:13 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 12:49:27 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_world	add_point_light(t_point_light p, t_world w)
 {
 	p.ambient = w.brute_ambient;
+	p.amb_color = w.ambient_color;
 	w.pl_list.list[w.pl_list.count] = p;
 	w.pl_list.count++;
 	return (w);
@@ -38,8 +39,9 @@ static t_lighting	calc_specular(t_material m, t_lighting l)
 t_lighting	calc_lighting(t_material m, t_lighting l)
 {
 	l.effec_color = hadamard_product(m.color, l.light.intesity);
+	l.ambient = hadamard_product(m.color, l.light.amb_color);
 	l.lightv = normalize(sub(l.light.position, l.over_point));
-	l.ambient = multiply(l.effec_color, l.light.ambient);
+	l.ambient = multiply(l.ambient, l.light.ambient);
 	l.light_dot_normal = dot_product(l.lightv, l.normalv);
 	if (l.light_dot_normal < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 10:56:43 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/27 19:52:35 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 12:27:59 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef struct s_point_light
 	t_dunit	intesity;
 	t_dunit	position;
 	double	ambient;
+	t_dunit	amb_color;
 }	t_point_light;
 
 typedef struct s_plight_list
@@ -184,6 +185,7 @@ typedef struct s_world
 	t_plight_list	pl_list;
 	t_vars			*vars;
 	double			brute_ambient;
+	t_dunit			ambient_color;
 }	t_world;
 
 typedef struct s_parsing

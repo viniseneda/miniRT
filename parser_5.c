@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:44:49 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/24 18:51:57 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 11:15:07 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_parsing	parse_light(t_parsing p)
 	t_point_light	pl;
 
 	d = parse_l(p);
-	d.color = convert_color_value(d.color);
+	d.color = multiply(convert_color_value(d.color), d.ratio);
 	pl = init_point_light(d.origin, d.color);
 	p.w = add_point_light(pl, p.w);
 	return (p);
