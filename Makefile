@@ -11,7 +11,7 @@ OBJS	= ${SRCS:.c=.o}
 
 CC	= cc
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 NAME	= a.out
 
@@ -22,7 +22,7 @@ NAME	= a.out
 RM	= rm -f
 
 $(NAME):	${OBJS}
-	cc ${OBJS} -L./libft -lft -lm -g -L. -lmlx_Linux -lXext -lX11 -lm -lz
+	cc ${OBJS} -L./libft -lft -L. -lmlx_Linux -lXext -lX11 -lm -lz
 
 
 all:	$(NAME)

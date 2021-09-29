@@ -6,12 +6,10 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 18:22:41 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/28 12:59:12 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:13:49 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
 #include "rt.h"
 
 void	print_unit(t_dunit a)

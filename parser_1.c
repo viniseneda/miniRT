@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:13:54 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/27 20:08:19 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:31:14 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_world	parse(int argc, char **argv)
 	char		**s;
 	t_parsing	p;
 
-	s = &b; //eu preciso mesmo inicializar isso?
+	s = &b;
 	fd = open_rt_file(argc, argv);
 	p = init_parse_struct(p);
 	p.w = init_world(p.w);
