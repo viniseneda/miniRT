@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 15:24:12 by vinicius          #+#    #+#             */
-/*   Updated: 2021/09/28 11:10:54 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:45:51 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <fcntl.h>
 # include "mlx.h"
 # include "parser.h"
+# define DEFAULT_X 1920
+# define DEFAULT_Y 1080
 # define EPSILON 0.00001
 # define PI 3.142857
 
@@ -33,6 +35,7 @@ void			print_double(double n);
 bool			is_equal(double a, double b);
 t_dunit			point(double x, double y, double z);
 t_dunit			vector(double x, double y, double z);
+t_camera		check_res(t_camera c, void *mlx);
 
 /*minilibx*/
 int				conv_double(double a);

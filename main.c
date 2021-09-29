@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 18:22:41 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/28 13:13:49 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:02:23 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	print_progress(int total_pixels)
 	static int	counter;
 
 	counter++;
+	if (total_pixels < 100)
+		return ;
 	if (counter % (int)(total_pixels * 0.01) == 0)
 		ft_putchar_fd('#', 0);
 	if (counter == total_pixels)
@@ -53,8 +55,8 @@ int	main(int argc, char **argv)
 	t_vars	vars;
 	t_image	img;
 
-	w = parse(argc, argv);
 	vars.mlx = mlx_init();
+	w = parse(argc, argv, vars.mlx);
 	vars.win = mlx_new_window(vars.mlx, w.camera.hsize,
 			w.camera.vsize, "miniRT");
 	img.img = mlx_new_image(vars.mlx, w.camera.hsize, w.camera.vsize);

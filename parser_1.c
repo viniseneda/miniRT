@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:13:54 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/28 17:31:14 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:08:03 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_parsing	gnl_loop(int fd, char **s, t_parsing p)
 	return (p);
 }
 
-t_world	parse(int argc, char **argv)
+t_world	parse(int argc, char **argv, void *mlx)
 {
 	int			fd;
 	char		*b;
@@ -63,7 +63,12 @@ t_world	parse(int argc, char **argv)
 	if (!p.has_ambient)
 		error("missing ambient light info");
 	if (!p.has_resolution)
-		error("program native resolution");
+	{
+		printf("Using default resolution of %d by %d\n", DEFAULT_X, DEFAULT_Y);
+		p.w.camera.hsize = DEFAULT_X;
+		p.w.camera.vsize = DEFAULT_Y;
+	}
+	p.w.camera = check_res(p.w.camera, mlx);
 	p.w.camera = camera(p.w.camera);
 	return (p.w);
 }
@@ -83,4 +88,17 @@ t_line_data	parse_minmax(t_parsing p, t_line_data data)
 		data.max = 1;
 	}
 	return (data);
+}
+
+t_camera	check_res(t_camera c, void *mlx)
+{
+	int	x;
+	int	y;
+
+	mlx_get_screen_size(mlx, &x, &y);
+	if (c.hsize > x)
+		c.hsize = x;
+	if (c.vsize > y)
+		c.vsize = y;
+	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 09:50:32 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/27 20:20:54 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:01:01 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /*p_1*/
 int			open_rt_file(int argc, char **argv);
 t_parsing	gnl_loop(int fd, char **s, t_parsing p);
-t_world		parse(int argc, char **argv);
+t_world		parse(int argc, char **argv, void *mlx);
 t_line_data	parse_minmax(t_parsing p, t_line_data data);
 
 /*p_2*/
