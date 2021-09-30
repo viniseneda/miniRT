@@ -24,6 +24,8 @@ RM	= rm -f
 $(NAME):	${OBJS}
 	cc ${OBJS} -L./libft -lft -L. -lmlx_Linux -lXext -lX11 -lm -lz
 
+install:
+	sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
 
 all:	$(NAME)
 
