@@ -13,7 +13,7 @@ CC	= cc
 
 CFLAGS = -Wall -Werror -Wextra
 
-NAME	= a.out
+NAME	= miniRT
 
 .c.o:
 	make -C ./libft all
@@ -22,7 +22,7 @@ NAME	= a.out
 RM	= rm -f
 
 $(NAME):	${OBJS}
-	cc ${OBJS} -L./libft -lft -L. -lmlx_Linux -lXext -lX11 -lm -lz
+	cc -o $(NAME) ${OBJS} -L./libft -lft -L. -lmlx_Linux -lXext -lX11 -lm -lz
 
 install:
 	sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
