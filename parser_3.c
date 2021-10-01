@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:44:40 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/24 18:48:42 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/10/01 10:52:24 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_dunit	parse_vector(t_parsing p)
 	u.y = parse_double(p);
 	parse_char(p, ',');
 	u.z = parse_double(p);
-	if ((u.x < -1 || u.x > 1) && (u.y < -1 || u.y > 1) && (u.z < -1 || u.z > 1))
+	if ((u.x < -1 || u.x > 1) || (u.y < -1 || u.y > 1) || (u.z < -1 || u.z > 1))
 		line_error("it has to be a normalized vector", p);
 	u.w = 0;
 	return (u);
