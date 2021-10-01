@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:44:45 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/29 15:48:26 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/10/01 14:58:24 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_dunit	parse_color(t_parsing p)
 	parse_char(p, ',');
 	u.z = parse_double(p);
 	u.w = 0;
-	if ((u.x < 0 || u.x > 255) && (u.y < 0 || u.y > 255)
-		&& (u.z < 0 || u.z > 255))
+	if ((u.x < 0 || u.x > 255) || (u.y < 0 || u.y > 255)
+		|| (u.z < 0 || u.z > 255))
 		line_error("color range is from 0-255", p);
 	return (u);
 }
