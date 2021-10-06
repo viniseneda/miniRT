@@ -1,5 +1,7 @@
 # miniRT
-My miniRT implementation for 42 school São Paulo.
+![lights](/lights.png)
+
+My miniRT implementation for 42 school São Paulo. Uses the minilibX library and runs using a .rt file as argument.
 
 ## .rt file usage:
 
