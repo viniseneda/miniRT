@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 10:56:43 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/28 12:27:59 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/10/06 09:59:16 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
-	void	*img;
+	t_image	i;
 }	t_vars;
 
 typedef struct s_line_data

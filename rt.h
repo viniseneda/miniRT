@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 15:24:12 by vinicius          #+#    #+#             */
-/*   Updated: 2021/09/29 15:45:51 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/10/06 10:32:34 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ t_world			add_obj(t_obj o, t_world w);
 t_matrix		view_transform(t_dunit from, t_dunit forward);
 t_camera		camera(t_camera c);
 t_ray			ray_for_pixel(double px, double py, t_camera c);
-void			render_world(t_camera c, t_world w, void *img);
+void			render_world(t_camera c, t_world w, t_vars vars);
 
 /*ray obj intersections*/
 bool			check_caps(t_ray r, double t, double radius);

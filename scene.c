@@ -6,7 +6,7 @@
 /*   By: vvarussa <vvarussa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 14:56:46 by vvarussa          #+#    #+#             */
-/*   Updated: 2021/09/29 13:54:28 by vvarussa         ###   ########.fr       */
+/*   Updated: 2021/10/06 10:33:00 by vvarussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_ray	ray_for_pixel(double px, double py, t_camera c)
 	return (ray(c.origin, c.direction));
 }
 
-void	render_world(t_camera c, t_world w, void *img)
+void	render_world(t_camera c, t_world w, t_vars vars)
 {
 	int				x;
 	int				y;
@@ -76,11 +76,13 @@ void	render_world(t_camera c, t_world w, void *img)
 		{
 			r = ray_for_pixel(x, y, c);
 			il = intersect_world(r, w);
-			img_mlx_pixel_put(img, x, y,
+			img_mlx_pixel_put(&vars.i, x, y,
 				create_trbg_int(lighting(hit(il), r, w)));
 			print_progress((int)(c.hsize * c.vsize));
 			x++;
 		}
+		if (y % 2 == 0)
+			mlx_put_image_to_window(vars.mlx, vars.win, vars.i.img, 0, 0);
 		x = 0;
 		y++;
 	}
